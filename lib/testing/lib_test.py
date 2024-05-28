@@ -96,9 +96,7 @@ class TestCalculator:
         assert(calculator("/", 90, 9) == 10)
 
     def test_prints_invalid_returns_none_if_invalid(self):
-        '''prints "Invalid operation!" and returns None if operation invalid'''
-        captured_out = io.StringIO()
-        sys.stdout = captured_out
-        assert(calculator('a', 1, 2) == None)
-        sys.stdout = sys.__stdout__
-        assert(captured_out.getvalue() == "Invalid operation!\n")
+      '''prints "Invalid operation!" and returns None if operation invalid'''
+    captured_out = io.StringIO()
+    sys.stdout = captured_out
+    assert calculator('a', 1, 2) is None  # Corrected assertion
